@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>Belve parsing visualizer</title>
+		<link rel="icon" href="data:" />
+		<style>
+			*,
+			*::after,
+			*::before {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+			}
+			html {
+				display: flex;
+				flex-direction: column;
+				min-height: 100%;
+			}
+			body,
+			.sveltekit-body {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+		</style>
+		%sveltekit.head%
+	</head>
+	<body>
+		<div class="sveltekit-body">%sveltekit.body%</div>
+	</body>
+</html>

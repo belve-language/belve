@@ -1,0 +1,7 @@
+import type {BranchConcreteSyntaxTreeNode} from "../../BranchConcreteSyntaxTreeNode.ts";
+import type {FunctionHeaderUnknownSegmentConcreteSyntaxTreeNodeChildren} from "./FunctionHeaderUnknownSegmentConcreteSyntaxTreeNodeChildren.ts";
+import type {functionHeaderUnknownSegmentConcreteSyntaxTreeNodeTypeName} from "./functionHeaderUnknownSegmentConcreteSyntaxTreeNodeTypeName.ts";
+export type FunctionHeaderUnknownSegmentConcreteSyntaxTreeNode = BranchConcreteSyntaxTreeNode<
+	typeof functionHeaderUnknownSegmentConcreteSyntaxTreeNodeTypeName,
+	FunctionHeaderUnknownSegmentConcreteSyntaxTreeNodeChildren
+>;

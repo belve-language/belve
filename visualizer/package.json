@@ -1,0 +1,17 @@
+{
+	"devDependencies": {
+		"@sveltejs/adapter-static": "3.0.8",
+		"@sveltejs/kit": "2.15.1",
+		"@types/node": "22.10.5",
+		"svelte-check": "4.1.1",
+		"vite": "6.0.6"
+	},
+	"name": "parsing-visualizer",
+	"scripts": {
+		"build": "vite build",
+		"check": "svelte-check --fail-on-warnings",
+		"dev": "vite"
+	},
+	"type": "module",
+	"version": "0.0.0"
+}
