@@ -1,0 +1,1 @@
+export const operatedStatementAbstractTreeNodeTypeName = "operatedStatement";

@@ -1,0 +1,8 @@
+import type {ConcreteTreeNode} from "../../ConcreteTreeNode.ts";
+import type {FunctionCallSegmentsSeparatedRestSegmentsConcreteTreeNodeChildren} from "./FunctionCallSegmentsRestSegmentsConcreteTreeNodeChildren.ts";
+import type {functionCallSegmentsSeparatedRestSegmentsConcreteTreeNodeTypeName} from "./functionCallSegmentsRestSegmentsConcreteTreeNodeTypeName.ts";
+
+export type FunctionCallSegmentsSeparatedRestSegmentsConcreteTreeNode = ConcreteTreeNode<
+	typeof functionCallSegmentsSeparatedRestSegmentsConcreteTreeNodeTypeName,
+	FunctionCallSegmentsSeparatedRestSegmentsConcreteTreeNodeChildren
+>;
