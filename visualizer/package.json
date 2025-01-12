@@ -10,7 +10,8 @@
 	"name": "parsing-visualizer",
 	"scripts": {
 		"build": "vite build",
-		"check": "svelte-check --fail-on-warnings",
+		"build:check": "svelte-check --fail-on-warnings",
+		"prebuild:check": "svelte-kit sync",
 		"dev": "vite"
 	},
 	"type": "module",

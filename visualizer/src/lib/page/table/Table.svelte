@@ -10,9 +10,9 @@
 	}> = $props();
 	const sourceCodeCharacters = $derived(sourceCode.split(""));
 	const concreteSyntaxTree = $derived(parse(sourceCodeCharacters));
-	$effect(() => {
-		console.log(concreteSyntaxTree);
-	});
+	// $effect(() => {
+	// 	console.log(concreteSyntaxTree);
+	// });
 	const levels: readonly Level[] = $derived([...traverseLevelwise(concreteSyntaxTree)]);
 	type EmptyCell = Readonly<{
 		kind: "empty";
