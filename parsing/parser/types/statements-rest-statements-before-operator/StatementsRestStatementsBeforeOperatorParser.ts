@@ -210,7 +210,7 @@ export class StatementsRestStatementsBeforeOperatorParser implements Parser {
 		])[];
 		const blockContentParser = new BlockContentParser(
 			blockClosingBracket,
-			this.blockEndingIndex,
+			index,
 			newBlockStack,
 			this.functionBodyEndingIndex,
 			this.functionEndingIndex,

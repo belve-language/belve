@@ -254,6 +254,7 @@ export class FunctionCallSegmentsParser implements Parser {
 		);
 		const statementsRestStatementsAfterOperatorParser =
 			new StatementsRestStatementsAfterOperatorParser(
+				index,
 				statementsRestStatementsStatements,
 				firstBlockStackEntry[1],
 				firstBlockStackEntry[2],

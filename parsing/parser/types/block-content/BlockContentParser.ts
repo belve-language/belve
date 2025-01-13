@@ -193,6 +193,7 @@ export class BlockContentParser implements Parser {
 		])[] = this.blockStack.slice(1);
 		const statementsRestStatementsAfterOperatorParser =
 			new StatementsRestStatementsAfterOperatorParser(
+				index,
 				statementsRestStatementsStatements,
 				firstBlockStackEntry[1],
 				firstBlockStackEntry[2],
@@ -215,7 +216,7 @@ export class BlockContentParser implements Parser {
 	): BlockContentParser {
 		const blockClosingBracket = createBlockClosingBracketConcreteSyntaxTreeNode(character, index);
 		const newBlockStack = [
-			[null, index, null, index, blockClosingBracket, index],
+			[null, index, null, index, this.blockClosingBracket, this.blockEndingIndex],
 			...this.blockStack,
 		] as const satisfies readonly (readonly [
 			statementsRestStatements: StatementsRestStatementsConcreteSyntaxTreeNode | null,

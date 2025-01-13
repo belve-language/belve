@@ -226,6 +226,7 @@ export class BlockContentFinalWhitespaceSegmentsParser implements Parser {
 		])[] = this.blockStack.slice(1);
 		const statementsRestStatementsAfterOperatorParser =
 			new StatementsRestStatementsAfterOperatorParser(
+				index,
 				statementsRestStatementsStatements,
 				firstBlockStackEntry[1],
 				firstBlockStackEntry[2],
