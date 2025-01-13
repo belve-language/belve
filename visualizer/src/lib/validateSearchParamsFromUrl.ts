@@ -13,7 +13,6 @@ export function validateSearchParamsFromUrl<Datum>(
 	const {datum, correctedSearchParams} = validator(url.searchParams);
 	const queryString = computeQueryStringFromHref(url.href);
 	const correctedQueryString = computeQueryStringFromSearchParams(correctedSearchParams);
-	console.log({queryString, correctedQueryString});
 	if (queryString === correctedQueryString) {
 		return {
 			status: successSearchParamsFromUrlValidationResultStatus,

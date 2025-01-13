@@ -8,5 +8,5 @@ export function abstractifyIdentifierSegments(
 		return identifierFirstSegment.character;
 	}
 	const abstractifiedIdentifierRestSegments = abstractifyIdentifierSegments(identifierRestSegments);
-	return `${identifierFirstSegment}${abstractifiedIdentifierRestSegments}`;
+	return `${identifierFirstSegment.character}${abstractifiedIdentifierRestSegments}`;
 }

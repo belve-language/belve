@@ -1,4 +1,4 @@
 export type ParsingConfiguration = Readonly<{
 	sourceCode: string;
-	isAnimated: boolean;
+	mode: "none" | "animated" | "instant" | "abstract-syntax-tree";
 }>;

@@ -1,27 +1,35 @@
 import {redirect} from "@sveltejs/kit";
-import type {PageServerLoad} from "./$types.ts";
+import type {PageLoad} from "./$types.js";
 import type {ParsingConfiguration} from "../lib/page/ParsingConfiguration.ts";
 import {validateSearchParamsFromUrl} from "../lib/validateSearchParamsFromUrl.ts";
-export const load: PageServerLoad = async ({url}) => {
+import {modeSearchParamName} from "../lib/modeSearchParamName.ts";
+import {sourceCodeSearchParamName} from "../lib/sourceCodeSearchParamName.ts";
+export const load: PageLoad = async ({url}) => {
 	const searchValidationResult = validateSearchParamsFromUrl(
 		url,
 		(searchParams: URLSearchParams) => {
-			const sourceCode = searchParams.get("source-code") ?? "";
-			const isAnimated = searchParams.get("animated") === "yes";
+			const sourceCode = searchParams.get(sourceCodeSearchParamName) ?? "";
+			const rawMode = searchParams.get(modeSearchParamName);
+			const mode =
+				rawMode === "animated" ||
+				rawMode === "none" ||
+				rawMode === "instant" ||
+				rawMode === "abstract-syntax-tree"
+					? rawMode
+					: "none";
 			const parsingConfiguration: ParsingConfiguration = {
 				sourceCode,
-				isAnimated,
+				mode,
 			};
 			const correctedSearchParams = new URLSearchParams();
-			correctedSearchParams.set("source-code", sourceCode);
-			correctedSearchParams.set("animated", isAnimated ? "yes" : "no");
+			correctedSearchParams.set(sourceCodeSearchParamName, sourceCode);
+			correctedSearchParams.set(modeSearchParamName, mode);
 			return {
 				datum: parsingConfiguration,
 				correctedSearchParams,
 			};
 		},
 	);
-	console.log(searchValidationResult);
 	switch (searchValidationResult.status) {
 		case "success": {
 			return searchValidationResult.datum;

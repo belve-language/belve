@@ -11,4 +11,3 @@ export function abstractifyFunctionHeaderWordSegment(
 		createFunctionHeaderWordSegmentAbstractSyntaxTreeNode(abstractifiedSegmentIdentifier);
 	return abstractifiedSegment;
 }
-//
