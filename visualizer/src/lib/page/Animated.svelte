@@ -111,19 +111,23 @@
 
 <section>
 	<button onclick={handleStepButtonClick}>Step</button>
-	<pre>{#each sourceCodeCharacters as character, index (index)}<span
-				class="character"
-				class:character--after={index > animator.$animationData.reversedCharactersLeft.length - 1}
-				class:character--before={index < animator.$animationData.reversedCharactersLeft.length - 1}
-				class:character--current={index ===
-					animator.$animationData.reversedCharactersLeft.length - 1}
-				>{JSON.stringify(character).slice(1, -1)}{#if character === "\n"}<br />{/if}</span
-			>{/each}</pre>
-	<pre>{animator.$animationData.parser.constructor.name}{JSON.stringify(
-			animator.$animationData.parser,
-			null,
-			"\t",
-		)}</pre>
+	<div>
+		<pre>{#each sourceCodeCharacters as character, index (index)}<span
+					class="character"
+					class:character-smaller={character === "\n"}
+					class:character--after={index > animator.$animationData.reversedCharactersLeft.length - 1}
+					class:character--before={index <
+						animator.$animationData.reversedCharactersLeft.length - 1}
+					class:character--current={index ===
+						animator.$animationData.reversedCharactersLeft.length - 1}
+					>{JSON.stringify(character).slice(1, -1)}{#if character === "\n"}<br />{/if}</span
+				>{/each}</pre>
+		<pre>{animator.$animationData.parser.constructor.name}{JSON.stringify(
+				animator.$animationData.parser,
+				null,
+				"\t",
+			)}</pre>
+	</div>
 </section>
 
 <style lang="scss">
@@ -142,5 +146,8 @@
 	}
 	.character--after {
 		background-color: gray;
+	}
+	.character-smaller {
+		font-size: 0.4rem;
 	}
 </style>
